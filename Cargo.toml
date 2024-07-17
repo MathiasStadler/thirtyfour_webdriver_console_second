@@ -1,0 +1,8 @@
+[package]
+name = "thirtyfour_webdriver_console_second"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+thirtyfour = "0.32.0"
+tokio = "1.38.1"
