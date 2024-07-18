@@ -169,6 +169,10 @@ async fn action_interactive() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+// FROM HERE => https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/const-and-static.html
+
+static mut _DRIVER:WebDriver = WebDriver::new(server_url, capabilities);
+
 async fn execute_command(cmd: &String) -> Result<(), Box<dyn Error>> {
     info!("start => execute_command -> {}", cmd);
 
