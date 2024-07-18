@@ -171,31 +171,39 @@ async fn action_interactive() -> Result<(), Box<dyn Error>> {
 
 async fn execute_command(cmd: &String) -> Result<(), Box<dyn Error>> {
     info!("start => execute_command -> {}", cmd);
-    // let _driver:: <Result<WebDriver::WebDriverError>> = std::option::Option ;
 
-    // debug!("execute_command  _cmd => {}", cmd);
-
-    // if cmd == "init" {
     debug!("execute_command  _cmd => {}", cmd);
 
-    let _driver = init_driver().await?;
-
-    //
     info!("init_driver - start");
+    let mut _caps = DesiredCapabilities::chrome();
 
-    // let _driver = match _driver {
-    //     Ok(value) => value,
-    //     Err(error) => {
-            
-    //             error!("_driver err => NO INSTANCE");
-                
-            
-    //     }
-    // };
+    _caps.add_arg("--remote-debugging-pipe")?;
+    _caps.add_arg("--no-sandbox")?;
+
+    let driver_result = WebDriver::new("http://localhost:9515", _caps).await;
+
+    let _driver = match driver_result {
+        Ok(value) => value,
+        Err(error) => return Err(Box::new(error)),
+    };
+    
+    /*
+        Err(_error) => return WebDriverError::CommandRecvError(_error),
+        |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    247 |         Err(_error) => return WebDriverError::CommandSendError(_error),
+        |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    247 |         Err(_error) => return WebDriverError::DecodeError(_error),
+        |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    247 |         Err(_error) => return WebDriverError::ElementClickIntercepted(_error),
+         */
+
+    // driver.maximize_window().await?;
+    info!("init_driver - end");
+
+    _driver.maximize_window().await?;
 
     //
 
-    // let _result_init_driver = init_driver();
     // } else
     if cmd == "close" {
         debug!("execute_command  _cmd => {}", cmd);
@@ -208,8 +216,6 @@ async fn execute_command(cmd: &String) -> Result<(), Box<dyn Error>> {
                 error!(r#"ACTION_BROWSER_CLOSE => Err {_e}"#);
             }
         };
-
-        // let _result_init_driver = init_driver();
     } else if cmd == "open" {
         debug!("execute_command  cmd => {}", cmd);
     } else {
@@ -228,35 +234,35 @@ async fn execute_command(cmd: &String) -> Result<(), Box<dyn Error>> {
 // FOUND HERE
 // https://itehax.com/blog/web-scraping-using-rust
 
-async fn init_driver() -> Result<WebDriver, WebDriverError> {
-    info!("init_driver - start");
-    let mut _caps = DesiredCapabilities::chrome();
+// async fn init_driver() -> Result<WebDriver, WebDriverError> {
+//     info!("init_driver - start");
+//     let mut _caps = DesiredCapabilities::chrome();
 
-    _caps.add_arg("--remote-debugging-pipe")?;
-    _caps.add_arg("--no-sandbox")?;
+//     _caps.add_arg("--remote-debugging-pipe")?;
+//     _caps.add_arg("--no-sandbox")?;
 
-    let driver_result = WebDriver::new("http://localhost:9515", _caps).await;
+//     let driver_result = WebDriver::new("http://localhost:9515", _caps).await;
 
-    // let result = WebDriver::new("http://localhost:4444/wd/hub", &caps).await;
-    let driver = match driver_result {
-        Ok(value) => value,
-        Err(error) => return Err(error),
-    };
-    
-    /*
-    Err(_error) => return WebDriverError::CommandRecvError(_error),
-    |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-247 |         Err(_error) => return WebDriverError::CommandSendError(_error),
-    |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-247 |         Err(_error) => return WebDriverError::DecodeError(_error),
-    |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-247 |         Err(_error) => return WebDriverError::ElementClickIntercepted(_error),
-     */
+//     // let result = WebDriver::new("http://localhost:4444/wd/hub", &caps).await;
+//     // let driver = match driver_result {
+//     //     Ok(value) => value,
+//     //     Err(error) => return Err(error),
+//     // };
 
-    driver.maximize_window().await?;
-    info!("init_driver - end");
-    Ok(driver)
-}
+//     /*
+//         Err(_error) => return WebDriverError::CommandRecvError(_error),
+//         |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//     247 |         Err(_error) => return WebDriverError::CommandSendError(_error),
+//         |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//     247 |         Err(_error) => return WebDriverError::DecodeError(_error),
+//         |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//     247 |         Err(_error) => return WebDriverError::ElementClickIntercepted(_error),
+//          */
+
+//     // driver.maximize_window().await?;
+//     info!("init_driver - end");
+//     Ok(driver_result)
+// }
 
 /*
 rustfmt  ./examples/thirtyfour_interactive_5.rs
