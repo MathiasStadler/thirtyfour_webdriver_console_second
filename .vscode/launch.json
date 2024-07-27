@@ -3,5 +3,265 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'thirtyfour_webdriver_console_second'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=thirtyfour_webdriver_console_second",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_webdriver_console_second",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'thirtyfour_webdriver_console_second'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=thirtyfour_webdriver_console_second",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_webdriver_console_second",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'example'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=example",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "example",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'example'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=example",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "example",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'referenceHoldingStruct'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=referenceHoldingStruct",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "referenceHoldingStruct",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'referenceHoldingStruct'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=referenceHoldingStruct",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "referenceHoldingStruct",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'referenceHoldingStructtwo'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=referenceHoldingStructtwo",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "referenceHoldingStructtwo",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'referenceHoldingStructtwo'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=referenceHoldingStructtwo",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "referenceHoldingStructtwo",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'thirtyfour_interactive_5'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=thirtyfour_interactive_5",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_5",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'thirtyfour_interactive_5'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=thirtyfour_interactive_5",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_5",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'thirtyfour_interactive_6'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=thirtyfour_interactive_6",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_6",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'thirtyfour_interactive_6'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=thirtyfour_interactive_6",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_6",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'thirtyfour_interactive_7'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=thirtyfour_interactive_7",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_7",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'thirtyfour_interactive_7'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=thirtyfour_interactive_7",
+                    "--package=thirtyfour_webdriver_console_second"
+                ],
+                "filter": {
+                    "name": "thirtyfour_interactive_7",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
 }
